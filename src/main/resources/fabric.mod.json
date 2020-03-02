@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "reactivecreepers",
+  "version": "${version}",
+
+  "environment": "*",
+  "mixins": [
+    "reactivecreepers.mixins.json"
+  ],
+  "name": "Nomad Books",
+  "icon": "assets/reactivecreepers/icon.png",
+  "description": "Makes creepers explode when getting damaged by an explosion, ignite when on fire, and charge up when getting damaged by a charged creeper!",
+  "authors": [
+    "doctor4t",
+    "Pyrofab"
+  ],
+  "contact": {
+    "sources": "https://github.com/Ladysnake/Reactive-Creepers",
+    "issues": "https://github.com/Ladysnake/Reactive-Creepers/issues",
+    "discord": "ladysnake.glitch.me/discord"
+  },
+  "license": "CC-BY-NC-SA 4.0",
+
+  "depends": {
+    "fabric": "*"
+  },
+  "suggests": {
+    "creeperspores": "*"
+  }
+}
