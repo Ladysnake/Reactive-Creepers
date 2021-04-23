@@ -1,0 +1,15 @@
+Features:
+- Creepers explode when getting damaged by an explosion
+- Creepers ignite when on fire
+- Creepers get charged up when damaged by a charged creeper
+- Creepers have 4 times the follow / target range
+- Creepers spawn at any light level
+- Creepers have a randomly reduced fuse time
+- Creepers have a 10% chance to expel random flying blocks
+    - These blocks can have any blockstate in the game
+    - These blocks deal damage like anvils
+- Creepers have a 10% chance to spawn 1 to 10 other creepers with random status effects when exploding
+- Creepers don't take fall damage
+- Creepers have a 10% chance to spawn charged
+- Creepers are twice as fast
+- Creeper explosion have a random knockback between normal and five times the Vanilla knockback

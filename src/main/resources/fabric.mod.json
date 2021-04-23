@@ -7,7 +7,7 @@
   "mixins": [
     "reactivecreepers.mixins.json"
   ],
-  "name": "Nomad Books",
+  "name": "Reactive Creepers",
   "icon": "assets/reactivecreepers/icon.png",
   "description": "Makes creepers explode when getting damaged by an explosion, ignite when on fire, and charge up when getting damaged by a charged creeper!",
   "authors": [
