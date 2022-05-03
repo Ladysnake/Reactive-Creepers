@@ -159,7 +159,7 @@ public class CustomCreeperExplosion extends Explosion {
 
                                 // spawn random flying blocks
                                 if (spawnBlocks && random.nextInt(100) == 0) {
-                                    FallingBlockEntity flyingBlock = new FallingBlockEntity(world, blockPos.getX() + 0.5, blockPos.getY() + 0.5, blockPos.getZ() + 0.5, Registry.BLOCK.getRandom(random).getDefaultState());
+                                    FallingBlockEntity flyingBlock = FallingBlockEntity.spawnFromBlock(world, blockPos, Registry.BLOCK.getRandom(random).get().value().getDefaultState());
                                     flyingBlock.timeFalling = 1;
                                     flyingBlock.dropItem = false;
                                     flyingBlock.setVelocity(random.nextGaussian(), random.nextGaussian(), random.nextGaussian());
@@ -183,7 +183,7 @@ public class CustomCreeperExplosion extends Explosion {
                 CreeperEntity creeperEntity = EntityType.CREEPER.create(world);
                 creeperEntity.setPos(this.x + 0.5, this.y + 0.5, this.z + 0.5);
                 creeperEntity.setVelocity(random.nextGaussian(), 1f, random.nextGaussian());
-                creeperEntity.addStatusEffect(new StatusEffectInstance(Registry.STATUS_EFFECT.getRandom(random), 600, random.nextInt(5)));
+                creeperEntity.addStatusEffect(new StatusEffectInstance(Registry.STATUS_EFFECT.getRandom(random).get().value(), 600, random.nextInt(5)));
                 world.spawnEntity(creeperEntity);
             }
         }
@@ -202,12 +202,12 @@ public class CustomCreeperExplosion extends Explosion {
         for(int x = 0; x < list.size(); ++x) {
             Entity entity = (Entity)list.get(x);
             if (!entity.isImmuneToExplosion()) {
-                double y = (double)(MathHelper.sqrt(entity.squaredDistanceTo(vec3d)) / q);
+                double y = (double)(MathHelper.sqrt((float) entity.squaredDistanceTo(vec3d)) / q);
                 if (y <= 1.0D) {
                     double z = entity.getX() - this.x;
                     double aa = (entity instanceof TntEntity ? entity.getY() : entity.getEyeY()) - this.y;
                     double ab = entity.getZ() - this.z;
-                    double ac = (double)MathHelper.sqrt(z * z + aa * aa + ab * ab);
+                    double ac = (double)MathHelper.sqrt((float) (z * z + aa * aa + ab * ab));
                     if (ac != 0.0D) {
                         z /= ac;
                         aa /= ac;
